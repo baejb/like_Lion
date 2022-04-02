@@ -1,0 +1,233 @@
+@media (min-width:451px){
+@font-face {
+    font-family: 'LeeSeoyun';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2202-2@1.0/LeeSeoyun.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+*{
+    font-family:'LeeSeoyun';
+}
+
+article {
+    display: flex;
+    flex-direction: column;
+}
+
+.question{
+    display: none;
+}
+
+.result{
+    display: none;
+}
+
+#img {
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+}
+
+.share {
+    margin: 0 auto;
+}
+.startTitle{
+    margin:auto;
+    width: 185px;
+    height: 54px;
+    font-family: 'SF또박나영';
+    font-size: 24px;
+    line-height: 90px;
+    /* or 375% */
+    text-align: center;
+    
+    color: #000000;
+    
+    border: 2px solid #FFFFFF;
+}
+
+
+.progressBar{ /*진행도바 사진 서식*/
+    width: 321px;
+    height: 97.32px;
+    margin: auto;
+}
+.startButton{/*테스트 시작하기 버튼 사진*/
+    max-width: 60%;
+    height: auto;
+    background-color: rgba(0, 0, 0, 0);
+    margin:auto;
+    border: 0;
+    outline: 0;
+}
+#startbtn{
+    width: 60%;
+    height: auto;
+    margin:auto;
+}
+#titleImg1{/*상냥이 MBTI사진*/
+    width:20%; 
+    height:auto;
+    margin: auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+#titleImg2{/*나는 어떤 고양이일까 사진*/
+    margin: auto;
+    margin-bottom: 1%;
+} 
+.row-flex{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin:10px;
+}
+
+.res-img {
+  width : 200px;
+  height : 200px;
+  margin : 10px;
+}
+#container{
+    font-family: ''LeeSeoyun'', cursive;
+}
+.startPage0{
+    background-image: url("start_page0.jpg");
+    height: 100vh;
+    background-size: cover;
+    /*max-width: 100%;
+    height: auto;*/
+
+    
+}
+.startPage{
+    background-image: url("start_page.jpg");
+    max-width: 100%;
+    height: auto;
+}
+#A, #B{
+    border-radius: 25px;
+    opacity: 0.9;
+    border: 3px solid black;
+    
+    
+}
+}
+@media (max-width: 450px){
+    @font-face {
+        font-family: 'LeeSeoyun';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2202-2@1.0/LeeSeoyun.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+    *{
+        font-family:'LeeSeoyun';
+    }
+    article {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .question{
+        display: none;
+    }
+    
+    .result{
+        display: none;
+    }
+    
+    #img {
+        width: 300px;
+        height: 300px;
+        margin: 0 auto;
+    }
+    
+    .share {
+        margin: 0 auto;
+    }
+    .startTitle{
+        margin:auto;
+        width: 185px;
+        height: 54px;
+        font-family: 'SF또박나영';
+        font-size: 24px;
+        line-height: 90px;
+        /* or 375% */
+        text-align: center;
+        
+        color: #000000;
+        
+        border: 2px solid #FFFFFF;
+    }
+    
+    
+    .progressBar{ /*진행도바 사진 서식*/
+        width: 321px;
+        height: 97.32px;
+        margin: auto;
+    }
+    .startButton{/*테스트 시작하기 버튼 사진*/
+        max-width: 60%;
+        height: auto;
+        background-color: rgba(0, 0, 0, 0);
+        margin:auto;
+        border: 0;
+        outline: 0;
+        position: relative;
+        margin-top: 100%;
+    }
+    #startbtn{
+        width: 60%;
+        height: auto;
+        margin:auto;
+    }
+    #titleImg1{/*상냥이 MBTI사진*/
+        width:20%; 
+        height:auto;
+        margin: auto;
+        margin-top: 5%;
+        margin-bottom: 5%;
+    }
+    #titleImg2{/*나는 어떤 고양이일까 사진*/
+        margin: auto;
+        margin-bottom: 1%;
+    } 
+    .row-flex{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        margin:10px;
+    }
+    
+    .res-img {
+      width : 200px;
+      height : 200px;
+      margin : 10px;
+    }
+    #container{
+        font-family: 'Gamja Flower', cursive;
+    }
+    .startPage0{
+        background-image: url("start_page0.jpg");
+        max-width: 100%;
+        height: auto;
+        background-size: cover;
+    }
+    .startPage{
+        background-image: url("start_page.jpg");
+        max-width: 100%;
+        height: auto;
+        background-size: cover;
+    }
+    #A, #B{
+        border-radius: 25px;
+        opacity: 0.9;
+        border: 3px solid black;
+        background-color: #FFFFFF;
+        
+    }
+}
+.kakao_ad mt-5{
+    width:50%;
+    height:50%;
+}

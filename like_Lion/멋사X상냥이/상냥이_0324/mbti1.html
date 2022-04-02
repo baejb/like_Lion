@@ -1,0 +1,168 @@
+<!DOCTYPE html> 
+<html lang="ko">
+
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>상냥이 MBTI</title>
+        <meta name="description" content="나는 어떤 상냥이일까?">  
+        <meta property="og:type" content="website">     
+        <meta property="og:title" content="상냥이 MBTI">    
+        <meta property="og:description" content="나랑 꼭 닮은 상냥이를 MBTI 기반으로 추천해주는 테스트입니다.">     
+        <meta property="og:image" content="https://ssbserengetimbtitest.netlify.app/lion.jpg">    <!--공유 시 표시되는 이미지-->
+        <meta property="og:url" content="https://ssbserengetimbtitest.netlify.app">    <!--웹 페이지의 URL-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <link rel="stylesheet" href="style1.css">     
+        <!--구글 웹 폰트 적용-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="mediaquery1.css">
+    </head>
+    
+    <body id="container" class="startPage0"> <!--페이지에 배경사진 추가-->
+        <article class="start">      
+            <img id = "titleImg1" alt="제목"><!--상냥이 MBTI 이미지-->
+            <img id = "titleImg2" src="title_img2.png" alt="제목"> <!--나는 어떤 고양이일까? 이미지-->
+
+            <!--테스트 시작하기 버튼 이미지로 대체-->
+            <button type="button" class="startButton" onclick ='start();'><img src="start_button.png" id="startbtn"></button>
+        </article>
+
+        <article class="question">
+            <div class="progressBar"><!--진행바 고양이 발자국 사진으로 교체-->
+                <img id = "progressImg" src="progress1.png" alt="animal"><!--질문 진행할때마다 발자국 하나씩 늘어나게 함-->
+            </div>
+            <h1 id = "title" class = "text-center mt-5">문제</h1>
+            <input id = "type" type="hidden" value="EI">    
+            <button id ="A" type="button" class="btn btn-light mt-5">warning</button>    
+            <button id ="B" type="button" class="btn btn-light mt-5">warning</button> 
+        </article>
+
+        <article class="result"> <!— 결과화면에 나랑 잘 맞는 상냥이 안맞는 상냥이 추가—>
+            <img id = "restitle" src="restitle_img.png">
+            <img id = "img" class = "rounded-circle mt-5" src="ISFJ 요비.jpg" alt="animal">
+            <h5 id = "subtitle" class = "text-center mt-5">mbti 특징</h5>
+            <h2 id = "animal" class = "text-center">동물이름</h2>
+            <h5 id = "explain" class = "text-center mt-3">설명</h5>
+            <div class="row-flex">
+              <article >
+                <h3 class = "text-center mt-5"> 나와 <span style="color: blue;">잘</span> 맞는 상냥이! </h3>
+                <img id = "goodcat" class = "res-img" src = "ENFP 양말.jpg">
+                <h3 id = "goodname" class = "text-center mt-2"> 동물이름 </h3>
+                </article>
+                <article>
+                <h3 class = "text-center mt-5"> 나와 <span style="color: red;">안</span> 맞는 상냥이! </h3>
+                <img id = "badcat" class = "res-img" src = "ISFP 미요.jpg">
+                <h3 id = "badname" class = "text-center mt-2"> 동물이름 </h3>
+                
+              <article>
+            </div>
+            <!-- Go to www.addthis.com/dashboard to customize your tools -->
+            <div id="supproting">
+            <div>
+            <a id="support" href="https://tumblbug.com/walkwithyobi?ref=%EA%B2%80%EC%83%89%2F%ED%82%A4%EC%9B%8C%EB%93%9C" title="후원" target="_blank"><img src="support.PNG"></a>
+            </div>
+            <div class="addthis_inline_share_toolbox" style="margin: auto;"></div>
+             </div>
+        </article>
+    
+        <article id="ad" class = "kakao_ad mt-5"> 
+            <ins class="kakao_ad_area" style="display:none;"
+                data-ad-unit    = "DAN-nPK6LeCwhu1jv6ai"
+                data-ad-width   = "320"
+                data-ad-height  = "100">
+            </ins>
+            </article>
+            <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script> <!-- 카카오 애드핏 관련 스크립트 -->
+          
+        <input type="hidden" id = "EI" value="0">
+        <input type="hidden" id = "SN" value="0">
+        <input type="hidden" id = "TF" value="0">
+        <input type="hidden" id = "JP" value="0">
+        <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+        <script>  
+            var num = 1;    
+		    var q = {     
+                1: {"title":"<br>모르는 사람이 다가와 츄르를 준다 !", "type":"EI", "A": "맛있는 츄르 냄새가 솔솔 나는 것 같아 ! 츄르를 주는 사람은 좋은 💁🏻!<br>얼른 다가가서 냠냠 먹는다.😋", "B":"츄르의 향기는 거부할 수 없지만, 처음 본 사람에게 다가가는 것은 힘들어 ..<br>츄르 포기 🥺", "img": "progress1.png"},
+                2: {"title":"<br>엇,, 공학관 옆에 새로운 냥이가 있는 것 같아 .. !", "type":"EI", "A": "새로운 냥인가 ?? 어디서왔지 ??<br>얼른가서 이름 물어봐야겠다😻", "B":"흠,, 어디서왔지.. 뭐라고 말을 걸어야할지 모르겠다<br>🙀 그냥 자야지💤", "img": "progress2.png"},
+                3: {"title":"<br>학생들이 다가와 손을 내민다 👋🏻", "type":"EI", "A": "아 역시 상냥이들중에 내가 제일 귀엽지 ~ <br>당당하게 인기를 즐겨야지!!", "B":"너무 많은 시선.. 부담스러워😿 <br>얼른 도망가야겠다,,,!", "img": "progress3.png"},
+                4: {"title":"<br>언덕을 영차영차 올라가다보니.... 어? 모르는 길이다 !", "type":"SN", "A": "괜히 여기로 갔다가 험한 꼴 당할라..<br>원래 있던 곳으로 가야겠다", "B":"헐 !! 여기로가면 뭐가 또 나올까 ??<br>너무 궁금해 당장 가봐야지", "img": "progress4.png"},
+                5: {"title":"학생들이 상냥이가 학생들의 말을<br>알아듣는다는 사실을 알아차렸다..!", "type":"SN", "A": "으휴💨<br>알아버렸네", "B":"어떡하지?? 설마 이제 나랑 말을 같이하려고하려나??<br>내가 뭐 먹고싶은지 알려줄까나🤔", "img": "progress5.png"},
+                6: {"title":"<br>하늘에서 사료가 떨어진다면 …? 🍖🥓", "type":"SN", "A": "하늘에서 사료가 떨어질리 없지 😤<br>배식부가 챙겨주신 사료나 먹으러가야겠다 ~", "B":"하늘에서 사료가 떨어진다구 ?!? 너무 좋아 !!<br>연어도 먹고싶고 닭고기도 먹고싶다 ~ 많이 떨어졌으면 좋겠어", "img": "progress6.png"},
+                7: {"title":"매일 캠퍼스를 구석구석 누비고 다니던 요정이가<br>오늘은 조용히 누워있는 것을 발견했다", "type":"TF", "A": "요정아 오늘은 왜 누워있어?? 무슨일이야?<br>말해봐 해결해줄게", "B":"요정아 괜찮아?? 힘들어보인다😿<br>나도 그런 날이 있지.. 힘내자!!", "img": "progress7.png"},
+                8: {"title":"사람이 다가와서 내가 못알아듣는 줄 알고,<br>옆에 있는 냥이가 더 이쁘다고 말한다..", "type":"TF", "A": "뭐래 내 앞에서 왜저래;;;<br>그러던가 말던가 으휴💨", "B":".....아무리그래도 그렇지..<br>내 앞에서 말하면 상처받지..", "img": "progress8.png"},
+                9: {"title":"자유로운 성격의 상냥이 턱스가<br>산책을 하다가 장난감 비슷한 것을 주워왔다!", "type":"TF", "A": "오 뭐야? 어디서 주웠어??<br>장난감 상태는 어때?", "B":"돌아다니느라 힘들었겠다!..<br>근데, 장난감 너무 귀엽다😻", "img": "progress9.png"},
+                10: {"title":"<br>내일은 학교에 학생들이 많이 올 것 같은데,,,,", "type":"JP", "A": " 📝 .. 내일 해가뜨면 편의점 쪽에가서<br>학생들 오는 거 구경해야겠다", "B":"수다소리에 시끄러워지면<br>일어나서 뭐할지 생각해봐야지 ~", "img": "progress10.png"},
+                11: {"title":"음.. 간식을 너무 많이 먹었나?<br>아무래도 뱃살이 늘어난 것 같아", "type":"JP", "A": "앞으로는 사료먹고나서<br>언덕 크게 한바퀴씩 돌고 누워있어야겠다🤔", "B":"좀 적게 먹어야할 것 같긴한데,,<br>뭐 앞으로의 내가 알아서하겠지~ 나중에 천천히 생각하자~", "img": "progress11.png"},
+                12: {"title":"<br>이제 곧 여름이네,, 엄청 덥겠지?", "type":"JP", "A": "미리미리 차가운 곳을 찾아놔야겠다⛱", "B":"더워지면 슬슬 차가운 곳으로 옮겨야겠네~", "img": "progress12.png"},
+            }
+            var result = { //나랑 잘 (안)맞는 상냥이 사진, 이름 추가
+                "ISTJ": {"animal": "요둥 [ISTJ]","subtitle": "청렴결백한 논리주의냥이", "explain": "나랑 얘기하고 싶다구..? 귀찮은건 질색이니 빙빙 돌리지 말고 용건만 간단하게 말해달라 냥!<br> 일단 시작한 일은 확실하게 끝낸다 냥! 일하는 도중에 방해하면 심한 꼴을 당할 거다 냥.. 건들이지 않는게 좋을거다 냥!", "img": "ISTJ 요둥.jpeg", "goodcat": "ESFP 보리.jpg", "badcat": "INTP 몽땅꼬리.jpg", "goodname": "보리", "badname" : "몽땅꼬리"},
+                "ISFJ": {"animal": "요비 [ISFJ]","subtitle": "용감한 수호냥이", "explain": "저기 고양이 무리 너무 즐거워 보인다 냥... 하지만 같이 놀기는 너무 부담스럽다 냥 <br> 겉으로는 항상 무덤덤해 보여도 생각도 많이하고 스트레스도 많이 받는 편이다냥..<br> 하지만 칭찬받으면 그만큼 기분이 좋기도 하고 칭찬도 많이 해주는 편이다 냥!!", "img": "ISFJ 요비.jpg", "goodcat": "ESTP 턱스.jpg", "badcat": "ENTJ 지기.jpg", "goodname": "턱스", "badname" : "지기"},
+                "INFJ": {"animal": "연두 [INFJ]","subtitle": "선의의 옹호냥이", "explain": "물소 설명", "img": "INFJ 연두.jpg", "goodcat": "ENFP 양말.jpg", "badcat": "ISFP 미요.jpg", "goodname": "양말", "badname" : "미요"},
+                "INTJ": {"animal": "머쓱이 [INTJ]","subtitle": "용의주도한 전략냥이", "explain": "저 고양이는 또 누구냥? 친한 냥이가 아니면 별로 관심없다 냥~<br> 매사 관심 없어보이지만 내가 세운 계획만큼은 확실하게 지킨다 냥! <br> 앗! 그 장난감은 내 꺼야 건들지 말라 냥!! 절대 다른 고양이한테 양보 안할거다 냥!", "img": "INTJ 머쓱이.jpg", "goodcat": "ENTP 요정.jpg", "badcat": "ESFJ 맹이.jpg", "goodname": "요정", "badname" : "맹이"},
+                "ISTP": {"animal": "맨발 [ISTP]","subtitle": "만능 재주냥이", "explain": "날 처음본 사람들은 내가 무뚝뚝한줄 안다 냥. 하지만 친해지고 보면 애교도 많고 같이 노는 것도 좋아하는 고양이다 냥!<br> 이것저것 호기심은 많지만 딱히 뭔가 적극적으로 하기는 귀찮은 행동력 0점 고양이다 냥", "img": "ISTP 맨발.jpg", "goodcat": "ESFJ 맹이.jpg", "badcat": "ENFP 양말.jpg", "goodname": "맹이", "badname" : "양말"},
+                "ISFP": {"animal": "미요 [ISFP]","subtitle": "호기심 많은 예술냥이", "explain": "모든게 귀찮아.. 날 귀찮게 하지 않았으면 좋겠다 냥.. 하지만 외로운건 싫어! 나한테 관심을 가져달라 냥~ <br>마음먹으면 뭐든 잘할 자신 있지만 지금 꼭 필요한 일이 아니면 굳이 안한다 냥", "img": "ISFP 미요.jpg", "goodcat": "ENFJ 그레이씨.jpg", "badcat": "INFJ 연두.jpg" ,"goodname": "그레이씨", "badname" : "연두"},
+                "INFP": {"animal": "귀리 [INFP]","subtitle": "열정적인 중재냥이", "explain": "다른 고양이가 아프면 나도 아픈것 같아! 난 공감능력이 정말 좋은것 같다 냥<br>하지만 착한 고양이는 아니다 냥~ 다른 고양이들이 짜증날 때도 많지만 내색을 안하는 것 뿐이다 냥..<br> 그래도 내가 좋아하는 고양이는 진심으로 챙겨준다 냥!!", "img": "INFP 귀리.jpg", "goodcat": "ENTJ 지기.jpg", "badcat": "ESFP 보리.jpg", "goodname": "지기", "badname" : "보리"},
+                "INTP": {"animal": "몽땅꼬리 [INTP]","subtitle": "창조적인 문제 해결사", "explain": "조용하고 과묵하지만 논리적으로 문제를 해결한다 냥! <br>다른 냥이들이 보기엔 내가 소심해 보일 수 있지만 관심있는 장난감에는 말이 아주 많다 냥 또 얼마나 똑똑하고창의적인지 !<br>이런 냥이 본적 있냥 ? ", "img": "INTP 몽땅꼬리.jpg", "goodcat": "ESTJ 체다.jpg", "badcat": "ISTJ 요둥.jpeg", "goodname": "체다", "badname" : "요둥"},
+                "ESTP": {"animal": "턱스 [ESTP]","subtitle": "모험을 즐기는 냥이", "explain": "나는 모험하는게 젤 좋다 냥!<br>여러 냥이들과 어울리는게 너무 좋아하루종일 이곳 저곳 돌아다니기만 한다냥~ <br>모두 날 쳐다볼 때 만큼좋은게 없다 냥~ ", "img": "ESTP 턱스.jpg", "goodcat": "ISFJ 요비.jpg", "badcat": "ENFJ 그레이씨.jpg" ,"goodname": "요비", "badname" : "그레이씨"},
+                "ESFP": {"animal": "보리 [ESFP]","subtitle": "자유로운 영혼의 스타냥이", "explain": "갑자기 흥얼거리며 즉흥적으로 춤을 추고 싶다 냥 !내가 가는 모든 곳이 내 무대다 냥!<br> 나는 사교적이고 단순한게 좋다 냥 좋은 냥이들과 어울려서 노는 것이 세상에서 제일 즐겁다 냥 !", "img": "ESFP 보리.jpg", "goodcat": "ISTJ 요둥.jpeg", "badcat": "INFP 귀리.jpg", "goodname": "요둥", "badname" : "귀리"},
+                "ENFP": {"animal": "양말 [ENFP]","subtitle": "재기발랄 활동냥이", "explain": "나는 자유로운게 좋다 냥!  맨날 같은 장난감으로 노는건 싫다 냥<br>늘 새로운 장난감을 만들어 내곤 한다 냥!<br> 내가 만든 장난감으로 냥이들에게 인기최고다 냥~ ", "img": "ENFP 양말.jpg", "goodcat": "INFJ 연두.jpg", "badcat": "ISTP 맨발.jpg" ,"goodname": "연두", "badname" : "맨발"},
+                "ENTP": {"animal": "요정 [ENTP]","subtitle": "발명냥이", "explain": "정해진 길은 없다고 생각한다 냥 ! 한번 꽂힌 건 무조건 해야 된다 냥 <br>하지만 금방 질리는건 어쩔 수 없다 냥 ~ 나는 다재다능하단 소리를 자주 듣는다 냥 <br>내 취미는 냥이들이랑 토론하는거다냥 반박하는게 특기다 냥!", "img": "ENTP 요정.jpg", "goodcat": "INTJ 머쓱이.jpg", "badcat": "ESTJ 체다.jpg", "goodname": "머쓱이", "badname" : "체다"},
+                "ESTJ": {"animal": "체다 [ESTJ]","subtitle": "엄격한 관리냥이", "explain": "이 구역의 질서 반장은 나다 냥! <br>우리 구역 질서는 내가 정한다 냥 계획하는 걸 좋아하며 추진시키는 능력을 갖고 있다 냥 <br>내가 계획 한건 철저히 지켜야 한다 냥  내가 아니라 다른 냥이들도 말이다 냥!   ", "img": "ESTJ 체다.jpg", "goodcat": "INTP 몽땅꼬리.jpg", "badcat": "ENTP 요정.jpg", "goodname": "몽땅꼬리", "badname" : "요정"},
+                "ESFJ": {"animal": "맹이 [ESFJ]","subtitle": "사교적인 외교냥이", "explain": "나는 우리 동료 냥이들을 사랑한다 냥!<br>냥이들과 얘기하는 게 너무 신나고 힘든일이 있는 냥이를 도와주는게 제일로 행복하다 냥 <br>그래서인지 나를 안 좋아하는 냥이는 없다냥 ! ", "img": "ESFJ 맹이.jpg", "goodcat": "ISTP 맨발.jpg", "badcat": "INTJ 머쓱이.jpg", "goodname": "맨발", "badname" : "머쓱이"},
+                "ENFJ": {"animal": "그레이씨 [ENFJ]","subtitle": "정의로운 사회운동냥이", "explain": "카리스마 하면 나다 냥! 나는 우리 냥이들이 편안하게 지낼 수 있게 항상 노력한다 냥 !<br> 더 좋은 구역을 차지하기 위해 항상 앞장서서 노력한다 냥 열정 빼면 내가 아니다 냥 ! ", "img": "ENFJ 그레이씨.jpg", "goodcat": "ISFP 미요.jpg", "badcat": "ESTP 턱스.jpg", "goodname": "미요", "badname" : "턱스"},
+                "ENTJ": {"animal": "지기 [ENTJ]","subtitle": "대담한 통솔냥이", "explain": "상냥이들은 나를 따르라 ! 넘치는 카리스마와 자신감으로 냥이들을 이끌고 있다 냥<br> 항상 열정적이고 주장이 강하지만 이 덕분에 우리 냥이들을 잘 이끌 수 있다고 생각한다 냥!", "img": "ENTJ 지기.jpg", "goodcat": "INFP 귀리.jpg", "badcat": "ISFJ 요비.jpg", "goodname": "귀리", "badname" : "요비"}
+            }
+
+            function start(){   
+                $(".start").hide() 
+                $(".question").show()
+                document.getElementById('container').className = "startPage";
+                next();
+            }
+            $("#A").click(function(){ 
+            var type = $("#type").val();
+            var preValue = $("#"+type).val();
+            $("#"+type).val(parseInt(preValue)+1);
+            next();
+            });
+            $("#B").click(function(){ 
+            next();
+            });
+            function next(){
+                if(num == 13){
+                $(".question").hide();
+                $(".result").show();
+                var mbti = "";
+                ($("#EI").val() < 2) ? mbti += "I" : mbti += "E";
+                ($("#SN").val() < 2) ? mbti += "N" : mbti += "S";
+                ($("#TF").val() < 2) ? mbti += "F" : mbti += "T";
+                ($("#JP").val() < 2) ? mbti += "P" : mbti += "J";
+                $("#img").attr('src',result[mbti]["img"]);
+                $("#animal").html(result[mbti]["animal"]);
+                $("#explain").html(result[mbti]["explain"]);
+                $("#subtitle").html(result[mbti]["subtitle"]);
+                $("#goodcat").attr('src',result[mbti]["goodcat"]);//여기서부터 추가된 내용! 나랑 잘 맞는 상냥이 안맞는 상냥이
+                $("#badcat").attr('src',result[mbti]["badcat"]);
+                $("#goodname").html(result[mbti]["goodname"]);
+                $("#badname").html(result[mbti]["badname"]);//여기까지
+            }
+            else{   
+                $("#progressImg").attr('src',q[num]["img"]); //진행바 사진 바꾸기 추가
+                $("#title").html(q[num]["title"]);
+                $("#type").val(q[num]["type"]);
+                $("#A").html(q[num]["A"]);
+                $("#B").html(q[num]["B"]);
+                num++;
+            }
+        }
+    </script>
+    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-623897f69002cee7"></script>
+    </body>
+    </html>

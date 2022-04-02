@@ -1,0 +1,168 @@
+<!DOCTYPE html> 
+<html lang="ko">
+
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>상냥이 MBTI</title>
+        <meta name="description" content="나는 어떤 상냥이일까?">  
+        <meta property="og:type" content="website">     
+        <meta property="og:title" content="상냥이 MBTI">    
+        <meta property="og:description" content="나랑 꼭 닮은 상냥이를 MBTI 기반으로 추천해주는 테스트입니다.">     
+        <meta property="og:image" content="https://ssbserengetimbtitest.netlify.app/lion.jpg">    <!--공유 시 표시되는 이미지-->
+        <meta property="og:url" content="https://ssbserengetimbtitest.netlify.app">    <!--웹 페이지의 URL-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <link rel="stylesheet" href="style.css">
+       
+
+    
+        <!--구글 웹 폰트 적용-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap" rel="stylesheet">
+    </head>
+    
+    <body id="container" class="startPage0"> <!--페이지에 배경사진 추가-->
+        <article class="start">      
+            <img id = "titleImg1" src="title_img.png" alt="제목"><!--상냥이 MBTI 이미지-->
+            <img id = "titleImg2" src="title_img2.png" alt="제목"> <!--나는 어떤 고양이일까? 이미지-->
+            <!--테스트 시작하기 버튼 이미지로 대체-->
+            <button type="button" class="startButton" onclick ='start();'><img src="start_button.png" id="startbtn"></button>
+        </article>
+        
+        <article class="question">
+            <div class="progressBar"><!--진행바 고양이 발자국 사진으로 교체-->
+                <img id = "progressImg" src="progress1.png" alt="animal"><!--질문 진행할때마다 발자국 하나씩 늘어나게 함-->
+            </div>
+            <h1 id = "title" class = "text-center mt-5">문제</h1>
+            <input id = "type" type="hidden" value="EI">    
+            <button id ="A" type="button" class="btn btn-warning mt-5">warining</button>    
+            <button id ="B" type="button" class="btn btn-warning mt-3">warining</button> 
+        </article>
+
+        <article class="result"> <!-- 결과화면에 나랑 잘 맞는 상냥이 안맞는 상냥이 추가-->
+            <img id = "img" class = "rounded-circle mt-5" src="ISFJ 요비.jpg" alt="animal">
+            <h2 id = "animal" class = "text-center mt-5">동물이름</h2>
+            <h3 id = "subtitle" class = "text-center mt-5">mbti 특징</h3>
+            <h5 id = "explain" class = "text-center mt-5">설명</h5>
+            <div class="row-flex">
+              <article>
+              <h3 class = "text-center mt-5"> 나와 잘 맞는 상냥이! </h3>
+              <img id = "goodcat" class = "res-img" src = "ENFP 양말.jpg">
+              <h3 id = "goodname" class = "text-center mt-5"> 동물이름 </h3>
+              </article>
+              <article>
+              <h3 class = "text-center mt-5"> 나와 안 맞는 상냥이! </h3>
+              <img id = "badcat" class = "res-img" src = "ISFP 미요.jpg">
+              <h3 id = "badname" class = "text-center mt-5"> 동물이름 </h3>
+              <article>
+            </div>
+            <!-- Go to www.addthis.com/dashboard to customize your tools -->
+            <div>
+                <a href="https://tumblbug.com/walkwithyobi?ref=%EA%B2%80%EC%83%89%2F%ED%82%A4%EC%9B%8C%EB%93%9C" title="후원" target="_blank">후원하기</a>
+            </div>
+            <div class="addthis_inline_share_toolbox" style="margin: auto;"></div>
+        </article>
+        
+        <article class = "kakao_ad mt-5"> 
+        <ins class="kakao_ad_area" style="display:none;"
+            data-ad-unit    = "DAN-nPK6LeCwhu1jv6ai"
+            data-ad-width   = "320" 
+            data-ad-height  = "100">
+        </ins>
+        </article>
+        <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script> 
+            
+        <input type="hidden" id = "EI" value="0">
+        <input type="hidden" id = "SN" value="0">
+        <input type="hidden" id = "TF" value="0">
+        <input type="hidden" id = "JP" value="0">
+        <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+        <script>  
+            var num = 1;    
+		    var q = {     
+                1: {"title":"모르는 사람이 다가와 츄르를 준다 !", "type":"EI", "A": "맛있는 츄르 냄새가 솔솔 나는 것 같아 ! 츄르를 주는 사람은 좋은 💁🏻! 얼른 다가가서 냠냠 먹는다.😋", "B":"츄르의 향기는 거부할 수 없지만, 처음 본 사람에게 다가가는 것은 힘들어 .. 츄르 포기 🥺", "img": "progress1.png"},
+                2: {"title":"엇,, 공학관 옆에 새로운 냥이가 있는 것 같아 .. !", "type":"EI", "A": "새로운 냥인가 ?? 어디서왔지 ?? 얼른가서 이름 물어봐야겠다😻", "B":"흠,, 어디서왔지.. 뭐라고 말을 걸어야할지 모르겠다 🙀 그냥 자야지💤", "img": "progress2.png"},
+                3: {"title":"학생들이 다가와 손을 내민다 👋🏻", "type":"EI", "A": "아 역시 상냥이들중에 내가 제일 귀엽지 ~ 당당하게 인기를 즐겨야지 ~", "B":"너무 많은 시선.. 부담스러워😿 얼른 도망가야겠다,,,!", "img": "progress3.png"},
+                4: {"title":"언덕을 영차영차 올라가다보니.... 어? 모르는 길이다 !", "type":"SN", "A": "괜히 여기로 갔다가 험한 꼴 당할라 원래 있던 곳으로 가야겠다", "B":"헐 !! 여기로가면 뭐가 또 나올까 ?? 너무 궁금해 당장 가봐야지", "img": "progress4.png"},
+                5: {"title":"학생들이 상냥이가 학생들의 말을 알아듣는다는 사실을 알아차렸다..!", "type":"SN", "A": "으휴💨 알아버렸네", "B":"어떡하지?? 설마 이제 나랑 말을 같이하려고하려나?? 내가 뭐 먹고싶은지 알려줄까나🤔", "img": "progress5.png"},
+                6: {"title":"하늘에서 사료가 떨어진다면 …? 🍖🥓", "type":"SN", "A": "하늘에서 사료가 떨어질리 없지 😤, 배식부가 챙겨주신 사료나 먹으러가야겠다 ~", "B":"하늘에서 사료가 떨어진다구 ?!? 너무 좋아 !! 연어도 먹고싶고 닭고기도 먹고싶다 ~ 많이 떨어졌으면 좋겠어", "img": "progress6.png"},
+                7: {"title":"매일 캠퍼스를 구석구석 누비고 다니던 요정이가 오늘은 조용히 누워있는 것을 발견했다", "type":"TF", "A": "요정아 오늘은 왜 누워있어?? 무슨일이야? 말해봐 해결해줄게", "B":"요정아 괜찮아?? 힘들어보인다😿 나도 그런 날이 있지.. 힘내자!!", "img": "progress7.png"},
+                8: {"title":"사람이 다가와서 내가 못알아듣는 줄 알고, 옆에 있는 냥이가 더 이쁘다고 말한다..", "type":"TF", "A": "뭐래 내 앞에서 왜저래;;; 그러던가 말던가 으휴💨", "B":".....아무리그래도 그렇지 내 앞에서 말하면 상처받지..", "img": "progress8.png"},
+                9: {"title":"자유로운 성격의 상냥이 턱스가 돌아다니다가 장난감 비슷한 것을 주워왔다!", "type":"TF", "A": "오 뭐야? 어디서 주웠어?? 장난감 상태는 어때?", "B":"돌아다니느라 힘들었겠다!..근데, 장난감 너무 귀엽다😻", "img": "progress9.png"},
+                10: {"title":"내일은 학교에 학생들이 많이 올 것 같은데,,,,", "type":"JP", "A": " 📝 .. 내일 해가뜨면 편의점 쪽에가서 학생들 오는 거 구경해야겠다", "B":"수다소리에 시끄러워지면 일어나서 뭐할지 생각해봐야지 ~", "img": "progress10.png"},
+                11: {"title":"음.. 간식을 너무 많이 먹었나? 아무래도 뱃살이 늘어난 것 같아", "type":"JP", "A": "앞으로는 사료먹고나서 언덕 크게 한바퀴씩 돌고 누워있어야겠다🤔", "B":"좀 적게 먹어야할 것 같긴한데,, 뭐 앞으로의 내가 알아서하겠지~ 나중에 천천히 생각하자~", "img": "progress11.png"},
+                12: {"title":"이제 곧 여름이네,, 엄청 덥겠지?", "type":"JP", "A": "미리미리 차가운 곳을 찾아놔야겠다⛱", "B":"더워지면 슬슬 차가운 곳으로 옮겨야겠네~", "img": "progress12.png"},
+            }
+            var result = { //나랑 잘 (안)맞는 상냥이 사진, 이름 추가 ,냥으로 바꾸기
+                "ISTJ": {"animal": "요둥 [ISTJ]","subtitle": "청렴결백한 논리주의자", "explain": "하마 설명", "img": "ISTJ 요둥.jpeg", "goodcat": "ESFP 보리.jpg", "badcat": "INTP 몽땅꼬리.jpg", "goodname": "보리", "badname" : "몽땅꼬리"},
+                "ISFJ": {"animal": "요비 [ISFJ]","subtitle": "용감한 수호자", "explain": "부엉이 설명", "img": "ISFJ 요비.jpg", "goodcat": "ESTP 턱스.jpg", "badcat": "ENTJ 지기.jpg", "goodname": "턱스", "badname" : "지기"},
+                "INFJ": {"animal": "연두 [INFJ]","subtitle": "선의의 옹호자", "explain": "물소 설명", "img": "INFJ 연두.jpg", "goodcat": "ENFP 양말.jpg", "badcat": "ISFP 미요.jpg", "goodname": "양말", "badname" : "미요"},
+                "INTJ": {"animal": "머쓱이 [INTJ]","subtitle": "용의주도한 전략가", "explain": "치타 설명", "img": "INTJ 머쓱이.jpg", "goodcat": "ENTP 요정.jpg", "badcat": "ESFJ 맹이.jpg", "goodname": "요정", "badname" : "맹이"},
+                "ISTP": {"animal": "맨발 [ISTP]","subtitle": "만능 재주꾼", "explain": "나무늘보 설명", "img": "ISTP 맨발.jpg", "goodcat": "ESFJ 맹이.jpg", "badcat": "ENFP 양말.jpg", "goodname": "맹이", "badname" : "양말"},
+                "ISFP": {"animal": "미요 [ISFP]","subtitle": "호기심 많은 예술가", "explain": "거북이 설명", "img": "ISFP 미요.jpg", "goodcat": "ENFJ 그레이씨.jpg", "badcat": "INFJ 연두.jpg" ,"goodname": "그레이씨", "badname" : "연두"},
+                "INFP": {"animal": "귀리 [INFP]","subtitle": "열정적인 중재자", "explain": "코끼리 설명", "img": "INFP 귀리.jpg", "goodcat": "ENTJ 지기.jpg", "badcat": "ESFP 보리.jpg", "goodname": "지기", "badname" : "보리"},
+                "INTP": {"animal": "몽땅꼬리 [INTP]","subtitle": "창조적인 문제 해결사", "explain": "침팬지 설명", "img": "INTP 몽땅꼬리.jpg", "goodcat": "ESTJ 체다.jpg", "badcat": "ISTJ 요둥.jpeg", "goodname": "체다", "badname" : "요둥"},
+                "ESTP": {"animal": "턱스 [ESTP]","subtitle": "모험을 즐기는 사업가", "explain": "악어 설명", "img": "ESTP 턱스.jpg", "goodcat": "ISFJ 요비.jpg", "badcat": "ENFJ 그레이씨.jpg" ,"goodname": "요비", "badname" : "그레이씨"},
+                "ESFP": {"animal": "보리 [ESFP]","subtitle": "자유로운 영혼의 연예인", "explain": "미어캣 설명", "img": "ESFP 보리.jpg", "goodcat": "ISTJ 요둥.jpeg", "badcat": "INFP 귀리.jpg", "goodname": "요둥", "badname" : "귀리"},
+                "ENFP": {"animal": "양말 [ENFP]","subtitle": "재기발랄 활동가", "explain": "사자 설명", "img": "ENFP 양말.jpg", "goodcat": "INFJ 연두.jpg", "badcat": "ISTP 맨발.jpg" ,"goodname": "연두", "badname" : "맨발"},
+                "ENTP": {"animal": "요정 [ENTP]","subtitle": "발명가형", "explain": "태양새 설명", "img": "ENTP 요정.jpg", "goodcat": "INTJ 머쓱이.jpg", "badcat": "ESTJ 체다.jpg", "goodname": "머쓱이", "badname" : "체다"},
+                "ESTJ": {"animal": "체다 [ESTJ]","subtitle": "대담한 통솔자", "explain": "기린 설명", "img": "ESTJ 체다.jpg", "goodcat": "INTP 몽땅꼬리.jpg", "badcat": "ENTP 요정.jpg", "goodname": "몽땅꼬리", "badname" : "요정"},
+                "ESFJ": {"animal": "맹이 [ESFJ]","subtitle": "사교적인 외교관", "explain": "고릴라 설명", "img": "ESFJ 맹이.jpg", "goodcat": "ISTP 맨발.jpg", "badcat": "INTJ 머쓱이.jpg", "goodname": "맨발", "badname" : "머쓱이"},
+                "ENFJ": {"animal": "그레이씨 [ENFJ]","subtitle": "정의로운 사회운동가", "explain": "카피바라 설명", "img": "ENFJ 그레이씨.jpg", "goodcat": "ISFP 미요.jpg", "badcat": "ESTP 턱스.jpg", "goodname": "미요", "badname" : "턱스"},
+                "ENTJ": {"animal": "지기 [ENTJ]","subtitle": "엄격한 관리자", "explain": "호랑이 설명", "img": "ENTJ 지기.jpg", "goodcat": "INFP 귀리.jpg", "badcat": "ISFJ 요비.jpg", "goodname": "귀리", "badname" : "요비"}
+            }
+
+            function start(){   
+                $(".start").hide();
+                $(".question").show();
+                next();
+                
+                document.getElementById('container').className = "startPage";
+                
+            }
+            $("#A").click(function(){ 
+            var type = $("#type").val();
+            var preValue = $("#"+type).val();
+            $("#"+type).val(parseInt(preValue)+1);
+            next();
+            });
+            $("#B").click(function(){ 
+            next();
+            });
+            
+            function next(){
+                if(num == 13){
+                $(".question").hide();
+                $(".result").show();
+                var mbti = "";
+                ($("#EI").val() < 2) ? mbti += "I" : mbti += "E";
+                ($("#SN").val() < 2) ? mbti += "N" : mbti += "S";
+                ($("#TF").val() < 2) ? mbti += "F" : mbti += "T";
+                ($("#JP").val() < 2) ? mbti += "P" : mbti += "J";
+                $("#img").attr('src',result[mbti]["img"]);
+                $("#animal").html(result[mbti]["animal"]);
+                $("#explain").html(result[mbti]["explain"]);
+                $("#subtitle").html(result[mbti]["subtitle"]);
+                $("#goodcat").attr('src',result[mbti]["goodcat"]);//여기서부터 추가된 내용! 나랑 잘 맞는 상냥이 안맞는 상냥이
+                $("#badcat").attr('src',result[mbti]["badcat"]);
+                $("#goodname").html(result[mbti]["goodname"]);
+                $("#badname").html(result[mbti]["badname"]);//여기까지
+            }
+            else{   
+                $("#progressImg").attr('src',q[num]["img"]); //진행바 사진 바꾸기 추가
+                $("#title").html(q[num]["title"]);
+                $("#type").val(q[num]["type"]);
+                $("#A").html(q[num]["A"]);
+                $("#B").html(q[num]["B"]);
+                num++;
+            }
+        }
+    </script>
+    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-623897f69002cee7"></script>
+    </body>
+    </html>

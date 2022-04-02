@@ -1,0 +1,180 @@
+@media (max-width: 575px) {
+
+
+    @font-face {
+        font-family: 'GangwonEdu_OTFBoldA';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+* {
+    font-family: 'GangwonEdu_OTFBoldA';
+}
+#ad{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+html,body{
+    margin:0;
+    padding:0;
+    width:100%;
+    height:100;
+}
+
+article {
+    display: flex;
+    flex-direction: column;
+}
+.support{
+    display:flex;
+    flex-direction: column;
+}
+.question{
+    display: none;
+}
+
+.result{
+    display: none;
+}
+
+#img {
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+}
+
+.share {
+    margin: 0 auto;
+}
+.startTitle{
+    margin:auto;
+    width: 185px;
+    height: 54px;
+    font-family: 'GangwonEdu_OTFBoldA';
+    font-size: 24px;
+    line-height: 90px;
+    /* or 375% */
+    text-align: center;
+    
+    color: #000000;
+    
+    border: 2px solid #FFFFFF;
+}
+
+
+.progressBar{ /*진행도바 사진 서식*/
+    width: 321px;
+    height: 97.32px;
+    margin: auto;
+}
+.startButton{/*테스트 시작하기 버튼 사진*/
+    max-width: 80%;
+    height: auto;
+    background-color: rgba(0, 0, 0, 0);
+    margin:auto;
+    border: 0;
+    outline: 0;
+}
+#startbtn{
+    width: 60%;
+    height: auto;
+    margin:auto;
+    margin-bottom: 35%;
+}
+#titleImg1{/*상냥이 MBTI사진*/
+    content: url("mtitle_img.png");
+    width:50%; 
+    height:auto;
+    margin: auto;
+    margin-top: 20%;
+    margin-bottom: 35%;
+}
+
+#titleImg2{/*나는 어떤 고양이일까 사진*/
+    width: 35%;
+    margin: auto;
+    margin-bottom: 5%;
+}
+#title{
+    font-size : 30px;
+    width : 65%;
+}
+.row-flex{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin:10px;
+}
+
+.res-img {
+  width : 200px;
+  height : 200px;
+  margin : 10px;
+}
+
+.startPage0{
+    background-image: url("mstart_page0.jpg");
+    max-width: 100%;
+    height: auto;
+    background-size: cover;
+}
+.startPage{
+    background-image: url("mstart_page.jpg");
+    max-width: 100%;
+    height: auto;
+    background-size: cover;
+}
+
+#A, #B{
+    width : 80%;
+    border-radius: 25px;
+    opacity: 0.9;
+    border: 3px solid black;
+    font-size : 20px;
+    font-family: 'GangwonEdu_OTFBoldA';
+}
+article {
+    display: flex;
+    flex-direction: column;
+    justify-content : center;
+    align-items: center;
+}
+#img {
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+    border: 5px solid #bcbcbc;
+}
+
+.res-img {
+  width : 200px;
+  height : 200px;
+  margin : 10px;
+  border-radius: 20%;
+}
+
+#explain{
+    border: 2px dashed #bcbcbc;
+    border-radius: 20px;
+    background-color: #FFFFFF;
+    padding: 2%;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+h3, h2{
+    text-shadow:-1px 0px 0px white,1px 0px 0px white,0px -1px 0px white,0px 1px 0px white;
+}
+
+#subtitle{
+    text-shadow:1px 1px 10px #fffd99;
+    ;
+}
+/* .kakao_ad mt-5{
+    height: 10px;
+    position: relative;
+    transform: translateY(-100%);
+ }  */
+
+}
