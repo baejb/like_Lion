@@ -1,6 +1,15 @@
-import random
-import time
-    #for x in range(30): 0부터 29까지 x 라는 이름으로 저장을 하겠다 .
-lunch = random.choice(["된장찌개" , "피자" ,"제육볶음","치킨", "떡볶이"])
-dinner = random.choice(["김밥","쫄면","돈까스"])
-print(lunch)
+information = {"고향":"서울","취미":"피아노","좋아하는 음식":"국수"}
+foods = ["된장찌개","피자","제육볶음"]
+print(information.get("취미"))
+information["특기"] = "피아노"
+information["사는곳"]= "서울"
+del information["좋아하는 음식"]
+print(information)
+print(len(information))
+information.clear()
+print(information)
+print(foods[-1])
+foods.append("김밥")
+print(foods)
+del foods[1]
+print(foods)
